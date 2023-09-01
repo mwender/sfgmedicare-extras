@@ -58,7 +58,7 @@ function get_webinar_link( $atts ){
 
   $event = tribe_get_event( $post );
   $dates = $event->dates;
-  $start_date = $dates->start->format('U');
+  $start_date = ( ! is_null( $dates ) )? $dates->start->format('U') : strtotime( '+3 weeks' ); // Added default start_date to prevent fatal error while in Elementor editor
   $current_date = current_time( 'timestamp' );
 
   $event_details = tribe_events_event_schedule_details( $post->ID );

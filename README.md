@@ -2,10 +2,10 @@
 **Contributors:** [TheWebist](https://profiles.wordpress.org/TheWebist)  
 **Donate link:** https://mwender.com/  
 **Tags:** shortcodes  
-**Requires at least:** 5.7  
-**Tested up to:** 5.7.2  
-**Requires PHP:** 7.4  
-**Stable tag:** 0.9.8  
+**Requires at least:** 6.3  
+**Tested up to:** 6.3.1  
+**Requires PHP:** 8.0  
+**Stable tag:** 0.9.9  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -119,6 +119,9 @@ Add `[webinar_registration_link]` to any event post to link to the Webinar Regis
 ```
 
 ## Changelog ##
+
+### 0.9.9 ###
+* Setting default value for `$start_date` inside `lib/fns/shortcodes.php::get_webinar_link()` to prevent fatal error while editing in Elementor.
 
 ### 0.9.8 ###
 * Linking Team Member photos in `team-members.hbs`.
