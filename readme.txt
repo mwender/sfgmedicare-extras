@@ -5,7 +5,7 @@ Tags: shortcodes
 Requires at least: 6.3
 Tested up to: 6.3.1
 Requires PHP: 8.0
-Stable tag: 0.9.9
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +119,9 @@ Add `[webinar_registration_link]` to any event post to link to the Webinar Regis
 ```
 
 == Changelog ==
+
+= 1.0.0 =
+* Adding "Disable registration form?" option for TEC Event CPTs.
 
 = 0.9.9 =
 * Setting default value for `$start_date` inside `lib/fns/shortcodes.php::get_webinar_link()` to prevent fatal error while editing in Elementor.
