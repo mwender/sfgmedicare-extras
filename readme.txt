@@ -120,6 +120,9 @@ Add `[webinar_registration_link]` to any event post to link to the Webinar Regis
 
 == Changelog ==
 
+= 1.1.0 =
+* Adding `sfg_tribe_event_data` shortcode. Previously this shortcode was found inside a Hello Elementor Child Theme.
+
 = 1.0.1 =
 * Updating checks for required Composer libraries. Check is now compabible with libraries installed at the root of a Bedrock-based project.
 * Refactoring `npm` SCSS build and updating readme.txt to README.md generation with a pure node based setup. 
