@@ -7,7 +7,7 @@
  * Author URI:      https://mwender.com
  * Text Domain:     sfgmedicare-extras
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.0.1
  *
  * @package         Sfgmedicare_Extras
  */
@@ -19,17 +19,29 @@ define( 'SFG_DEV_ENV', stristr( site_url(), '.local' ) );
 define( 'SFG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SFG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-// Load Composer dependencies
-if( file_exists( SFG_PLUGIN_PATH . 'vendor/autoload.php' ) ){
-  require_once SFG_PLUGIN_PATH . 'vendor/autoload.php';
-} else {
-  add_action( 'admin_notices', function(){
-    $class = 'notice notice-error';
-    $message = __( 'Missing required Composer libraries. Please run `composer install` from the root directory of this plugin.', 'sfgmedicare' );
-    printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
-  } );
-}
+// Load Composer dependencies.
+$plugin_autoload = SFG_PLUGIN_PATH . 'vendor/autoload.php';
+$root_autoload   = dirname( SFG_PLUGIN_PATH, 4 ) . '/vendor/autoload.php';
 
+if ( file_exists( $plugin_autoload ) ) {
+  require_once $plugin_autoload;
+} elseif ( file_exists( $root_autoload ) ) {
+  require_once $root_autoload;
+} else {
+  add_action(
+    'admin_notices',
+    static function () {
+      $class   = 'notice notice-error';
+      $message = __( 'Missing required Composer libraries. Run `composer install` from the Bedrock project root.', 'sfgmedicare-extras' );
+
+      printf(
+        '<div class="%1$s"><p>%2$s</p></div>',
+        esc_attr( $class ),
+        esc_html( $message )
+      );
+    }
+  );
+}
 
 // Load required files
 require_once( SFG_PLUGIN_PATH . 'lib/fns/acf-json-save-point.php' );
