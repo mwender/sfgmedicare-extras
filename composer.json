@@ -1,14 +1,19 @@
 {
-    "name": "mwender/sfgmedicare-extras",
-    "description": "WordPress plugin for extending capabilities of the SFG website",
-    "type": "wordpress-plugin",
-    "require": {
-        "zordius/lightncandy": "^1.2"
-    },
-    "authors": [
-        {
-            "name": "Michael Wender",
-            "email": "michael@michaelwender.com"
-        }
-    ]
+  "name": "mwender/sfgmedicare-extras",
+  "description": "WordPress plugin for extending capabilities of the SFG website",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://github.com/mwender/sfgmedicare-extras",
+  "require": {
+    "php": ">=8.1",
+    "zordius/lightncandy": "^1.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Michael Wender",
+      "email": "michael@michaelwender.com"
+    }
+  ]
 }
