@@ -5,7 +5,7 @@ Tags: shortcodes
 Requires at least: 6.3
 Tested up to: 6.3.1
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +119,10 @@ Add `[webinar_registration_link]` to any event post to link to the Webinar Regis
 ```
 
 == Changelog ==
+
+= 1.0.1 =
+* Updating checks for required Composer libraries. Check is now compabible with libraries installed at the root of a Bedrock-based project.
+* Refactoring `npm` SCSS build and updating readme.txt to README.md generation with a pure node based setup. 
 
 = 1.0.0 =
 * Adding "Disable registration form?" option for TEC Event CPTs.
